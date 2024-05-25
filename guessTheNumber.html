@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        $(document).ready(function(){
+          let notif = $("#notif");
+          let min = 1;
+          let max = 100;
+          let soal = Math.floor(Math.random()*(max-min+1)+min);
+          console.log(soal);
+
+          $("#guess").click(function(){
+            let angka = parseInt($("#angka").val());
+            notif.html("");
+            if (angka>soal&&angka<=100){
+              notif.html("<p style='color:red;'>Angka terlalu besar</p>")
+            }
+            else if (angka<soal&&angka>=1){
+              notif.html("<p style='color:red;'>Angka terlalu kecil</p>")
+            }
+            else if (angka==soal){
+              notif.html("<p style='color:green;'>Jawaban Anda benar</p>")
+            }
+            else if(isNaN(angka)){
+              notif.html("<p style='color:red;'>Input angka 1-100</p>")
+            }
+          })
+
+          $("#reset").click(function(){
+            location.reload();
+          })
+        })
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-black" style="width: 100%;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#"><b><span id="judul1">Top</span><span id="judul2">6</span>ames</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link ms-3 me-3 text-white" aria-current="page" href="minigames.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3 text-white" href="tictactoe.html">Tic Tac Toe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-3" href="#" style="color: rgb(144, 220, 255);
+                border-bottom: 2px solid rgb(216, 118, 255);
+                font-weight: 700;">Guess The Number</a>
+              </li>
+            </ul>
+            <form action="home.html" class="d-flex" role="search" style="right: 20px; position: absolute;">
+                <button class="btn btn-outline-danger" type="submit">Back</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="playArea" style="left: 35%; margin-top: 50px; position: absolute; background-color: rgb(249, 255, 167); width: 400px; height: 220px; text-align: center;">
+        <div class="judulGame" style="color: rgb(46, 122, 189); top: 10px; left: 0px; font-weight: 1000; font-size: 30px;">
+            <p>Guess The Number</p>
+        </div>
+        <input placeholder="Write a number (1-100)..." id="angka" style="width: 300px; height: 30px;">
+        <div id="notif" style="font-size: 14px; font-weight: 500;"></div>
+        <button id="guess" style="background-color: green; width: 80px; height: 30px; margin-bottom: 10px; font-weight: 500; color: white; text-align: center; margin-top: 5px;">Guess</button>
+        <div class="reset">
+          <button id="reset" style="background-color: red; width: 80px; height: 30px; font-weight: 500; color: white; text-align: center;">Reset</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

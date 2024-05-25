@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritik Saran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <b><span id="judul1">Top</span><span id="judul2">6</span>ames</b>
+        <box-icon name='menu-alt-right' id="menu"></box-icon>
+        <nav class="navigasi">
+            <a href="home.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="aboutme.html">About me</a>
+            <a href="#" class="active">Suggestion</a>
+        </nav>
+    </header>
+
+    <!--Krisar-->
+    <div class="krisar">
+        <div class="krisar2">
+            <div class="name">
+                <h1>Nama:</h1>
+                <input type="text" placeholder="Input Nama Anda..." pattern="[A-Za-z]" style="background-color: whitesmoke;" required>
+            </div>
+
+            <div class="suggest">
+                <h1>Kritik / Saran:</h1>
+                <textarea name="Krisar" id="kolom" cols="30" rows="10" placeholder="beri saran disini!" style="font-size: 16px; background-color: whitesmoke;" required></textarea>
+            </div>
+
+            <div class="submit">
+                <button id="kumpul" onclick="openNotif()">Submit</button>
+            </div>
+            <div class="done" id="popup">
+                <img src="Thank You.jpg" alt="">
+                <h3>Kritik dan saran Anda <br>
+                    sangat bermanfaat untuk kami!</h3>
+                <button id="balik" onclick="closeNotif()"><a href="home.html">OK!</a></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
